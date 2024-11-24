@@ -1,3 +1,5 @@
+[![Build Python App with PyInstaller](https://github.com/TheBeaconCrafter/yt-dl-py/actions/workflows/build.yml/badge.svg)](https://github.com/TheBeaconCrafter/yt-dl-py/actions/workflows/build.yml)
+
 # YouTube Downloader
 
 This is a simple and barebones YouTube downloader application built with Python, `yt-dlp`, and `customtkinter`. It allows you to download YouTube videos in various formats (MP4, WEBM, MP3) with a user-friendly interface and blazing fast speeds.
