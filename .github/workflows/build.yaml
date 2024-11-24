@@ -35,4 +35,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: windows-latest
-        path: dist/main.exe  # Path to the built executable
+        path: dist/app.exe  # Path to the built executable
