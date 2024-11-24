@@ -5,27 +5,30 @@ import threading
 from queue import Queue
 import re
 import os
+import sys
 
 # Setting up the window
 customtkinter.set_appearance_mode("System")
 customtkinter.set_default_color_theme("blue")
 version = "1.0.0"
 
-def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    return os.path.join(base_path, relative_path)
-
 # App frame
 app = customtkinter.CTk()
 app.geometry("600x400")
 app.title("YouTube Downloader")
-app.iconbitmap(resource_path("assets/icon.ico"))
+# Determine the correct path for the icon depending on whether the app is frozen or not
+if getattr(sys, 'frozen', False):
+    # If running as a packaged app
+    icon_path = os.path.join(sys._MEIPASS, 'resources', 'icon.ico')
+else:
+    # If running as a script (for development)
+    icon_path = os.path.join(os.path.dirname(__file__), 'resources', 'icon.ico')
+
+try:
+    app.iconbitmap(icon_path)
+    print("Icon set successfully!")
+except Exception as e:
+    print(f"Error setting icon: {e}")
 
 # Queue for thread-safe UI updates
 update_queue = Queue()
