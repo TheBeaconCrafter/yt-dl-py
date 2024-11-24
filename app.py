@@ -11,11 +11,21 @@ customtkinter.set_appearance_mode("System")
 customtkinter.set_default_color_theme("blue")
 version = "1.0.0"
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 # App frame
 app = customtkinter.CTk()
 app.geometry("600x400")
 app.title("YouTube Downloader")
-app.iconbitmap(os.path.join("assets", "icon.ico"))
+app.iconbitmap(resource_path("assets/icon.ico"))
 
 # Queue for thread-safe UI updates
 update_queue = Queue()
