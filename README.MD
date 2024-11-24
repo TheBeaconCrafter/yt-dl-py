@@ -1,4 +1,4 @@
-[![Build Python App with PyInstaller](https://github.com/TheBeaconCrafter/yt-dl-py/actions/workflows/build.yml/badge.svg)](https://github.com/TheBeaconCrafter/yt-dl-py/actions/workflows/build.yml)
+[![Build Python App with PyInstaller](https://github.com/TheBeaconCrafter/yt-dl-py/actions/workflows/build.yaml/badge.svg)](https://github.com/TheBeaconCrafter/yt-dl-py/actions/workflows/build.yaml)
 
 # YouTube Downloader
 
