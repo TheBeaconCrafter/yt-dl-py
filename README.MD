@@ -23,7 +23,7 @@ This is a simple and barebones YouTube downloader application built with Python,
 1. Clone the repository:
    ```bash
    git clone https://github.com/TheBeaconCrafter/yt-dl-py
-````
+    ````
 
 2.  Install the required packages:
     ```bash
